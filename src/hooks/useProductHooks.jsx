@@ -3,6 +3,7 @@ import axiosInstance from "../util/AxiosInstance";
 const UseProductHook = () => {
     const [product, setProduct] = useState([]);
     const [searchData, setSearchData] = useState([]);
+    const [nameFilter, setNameFilter] = useState([]);
     const [isbn, setIsbn] = useState("");
     const fetchData = () => {
         axiosInstance.get("/auth/getAll")
@@ -31,7 +32,15 @@ const UseProductHook = () => {
             .catch(err => { console.log(err) })
 
     }
-    return { fetchData, setProduct, product, getBookData, setIsbn, isbn, searchFunc, setSearchData, searchData };
+    const filterData = (name) => {
+        axiosInstance.get(`/auth/getAll?name=${name}`)
+            .then(resp => {
+                console.log(resp.data.data);
+                setNameFilter(resp.data.data)
+            })
+            .catch(err => { console.log(err) })
+    }
+    return { fetchData, setProduct, product, getBookData, setIsbn, isbn, searchFunc, setSearchData, searchData, setNameFilter, nameFilter, filterData };
 
 }
 export default UseProductHook;
