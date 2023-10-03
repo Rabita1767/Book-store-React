@@ -64,6 +64,7 @@ button {
     cursor: pointer;
     /* Change cursor to a pointer on hover */
     transition: background-color 0.2s ease-in-out;
+    margin: 0 5px;
     /* Add a smooth background color transition on hover */
 }
 

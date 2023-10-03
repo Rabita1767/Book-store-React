@@ -2,6 +2,7 @@ import { NavLink, Link } from "react-router-dom";
 import { FaSearch } from 'react-icons/fa';
 import { useState, useEffect } from "react";
 import UseProductHook from "../hooks/useProductHooks";
+import Debounce from "./debounce";
 import "./navbar.css"
 const Header = () => {
     const [search, setSearch] = useState("");
@@ -37,10 +38,11 @@ const Header = () => {
                             </h1>
                         </div>
                         <div className="col-5">
-                            <div className="input-group">
+                            <Debounce />
+                            {/* <div className="input-group">
                                 <input type="text" onChange={(e) => setSearch(e.target.value)} class="form-control py-2" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" />
                                 <span className="input-group-text -3" id="basic-addon2"><FaSearch className="fs-6" /></span>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="col-5">
                             <div className="header-upper-links d-flex align-items-center justify-content-between">
@@ -86,9 +88,9 @@ const Header = () => {
 
             </header>
             <header>
-                {searchData && searchData.map((item) => {
+                {/* {searchData && searchData.map((item) => {
                     <h1>{item.name}</h1>
-                })}
+                })} */}
             </header>
         </>
     )

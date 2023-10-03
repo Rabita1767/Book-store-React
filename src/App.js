@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Filter from './pages/Filter';
+import ProductDetails from './pages/productDetails';
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/product" element={<Product />} />
+            <Route path="/product/:productId" element={<ProductDetails />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />

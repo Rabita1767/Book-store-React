@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "../util/AxiosInstance";
 const UseProductHook = () => {
+    const [loading, setLoading] = useState(false);
     const [product, setProduct] = useState([]);
     const [searchData, setSearchData] = useState([]);
     const [nameFilter, setNameFilter] = useState([]);
     const [isbn, setIsbn] = useState("");
+    const [param, setParam] = useState([]);
     const fetchData = () => {
         axiosInstance.get("/auth/getAll")
             .then(resp => {
                 console.log(resp.data.data);
                 setProduct(resp.data.data)
+                // setLoading(false);
             })
             .catch(err => { console.log(err) })
 
@@ -40,7 +43,16 @@ const UseProductHook = () => {
             })
             .catch(err => { console.log(err) })
     }
-    return { fetchData, setProduct, product, getBookData, setIsbn, isbn, searchFunc, setSearchData, searchData, setNameFilter, nameFilter, filterData };
+    const fetchProductById = (productId) => {
+        axiosInstance.get(`/auth/getAll?isbn=${productId}`)
+            .then(resp => {
+                console.log(resp.data.data);
+                setParam(resp.data.data)
+            })
+            .catch(err => { console.log(err) })
+
+    }
+    return { fetchData, setProduct, product, getBookData, setIsbn, isbn, searchFunc, setSearchData, searchData, setNameFilter, nameFilter, filterData, fetchProductById, setParam, param };
 
 }
 export default UseProductHook;

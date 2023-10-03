@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import UseProductHook from "../hooks/useProductHooks";
 import "./product.css";
 const Product = () => {
-    const { setProduct, fetchData, product, getBookData, isbn, setIsbn } = UseProductHook();
+    const navigate = useNavigate();
+    const { setProduct, fetchData, product, getBookData, isbn, setIsbn, loading } = UseProductHook();
     useEffect(() => {
         fetchData();
     }, [])
@@ -11,7 +13,6 @@ const Product = () => {
         getBookData(isbn);
 
     }
-
     return (
         <>
             <div className="product-grid">
@@ -22,6 +23,7 @@ const Product = () => {
                         <p>Category: {item.category}</p>
                         <p>Price: ${item.price}</p>
                         <button onClick={() => handleUpdate(item.isbn)}>Edit</button>
+                        <button onClick={() => navigate(`/product/${item.isbn}`)}>Details</button>
                     </div>
                 ))}
             </div>
