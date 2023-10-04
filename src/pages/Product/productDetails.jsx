@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import UseProductHook from "../hooks/useProductHooks";
+import UseProductHook from "../../hooks/useProductHooks";
 const ProductDetails = () => {
     const { productId } = useParams();
     const { fetchProductById, setParam, param } = UseProductHook();

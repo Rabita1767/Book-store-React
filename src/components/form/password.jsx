@@ -88,7 +88,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
-import UseAuthHook from "../hooks/useAuthHook";
+import UseAuthHook from "../../hooks/useAuthHook";
 const Password = ({ control, errors, watch }) => {
     const [passwordFieldType, setPasswordFieldType] = useState("password");
     const change = () => {

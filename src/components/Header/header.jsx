@@ -1,9 +1,8 @@
 import { NavLink, Link } from "react-router-dom";
 import { FaSearch } from 'react-icons/fa';
 import { useState, useEffect } from "react";
-import UseProductHook from "../hooks/useProductHooks";
-import Debounce from "./debounce";
-import "./navbar.css"
+import UseProductHook from "../../hooks/useProductHooks";
+import Debounce from "../debounce";
 const Header = () => {
     const [search, setSearch] = useState("");
     const { searchFunc, setSearchData, searchData } = UseProductHook();

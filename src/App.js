@@ -1,15 +1,16 @@
 import React from 'react';
 import './App.css';
-import Home from './pages/Home';
-import Layout from './components/layout';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Product from './pages/Product';
+import Home from './pages/Home/Home';
+import Layout from './components/Layout/layout';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
+import Product from './pages/Product/Product';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
-import Signup from './pages/Signup';
-import Login from './pages/Login';
-import Filter from './pages/Filter';
-import ProductDetails from './pages/productDetails';
+import Signup from './pages/Signup/Signup';
+import Login from './pages/Login/Login';
+import Filter from './pages/Filter/Filter';
+import ProductDetails from './pages/Product/productDetails';
+
 function App() {
   return (
     <>

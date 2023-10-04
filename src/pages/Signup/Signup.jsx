@@ -198,8 +198,8 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
-import UseAuthHook from "../hooks/useAuthHook";
-import Password from '../components/password';
+import UseAuthHook from "../../hooks/useAuthHook";
+import Password from '../../components/form/password';
 const Signup = () => {
     const [passwordFieldType, setPasswordFieldType] = useState("password");
     // const change = () => {

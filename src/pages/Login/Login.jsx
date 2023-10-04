@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
-import UseAuthHook from "../hooks/useAuthHook";
+import UseAuthHook from "../../hooks/useAuthHook";
 const Login = () => {
     const {
         handleSubmit,
@@ -11,7 +11,7 @@ const Login = () => {
         watch,
     } = useForm()
 
-    const { login } = UseAuthHook();
+    const { login, logInfo } = UseAuthHook();
     const navigate = useNavigate();
     const handlerSubmit = (e) => {
         const data =

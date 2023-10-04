@@ -1,6 +1,7 @@
 import { useState } from "react";
-import UseProductHook from "../hooks/useProductHooks";
-import "./product.css"
+import UseProductHook from "../../hooks/useProductHooks";
+import Button from "../../components/ui/button";
+import "../Product/product.css"
 const Filter = () => {
     const { filterData, setNameFilter, nameFilter } = UseProductHook();
     const [name, setName] = useState("");
@@ -13,7 +14,8 @@ const Filter = () => {
             <div>
                 <form onSubmit={handleSubmit}>
                     <input type="text" label="name" onChange={(e) => setName(e.target.value)}></input>
-                    <button type="submit">Filter</button>
+                    {/* <button type="submit">Filter</button> */}
+                    <Button type="submit" text="Filter" />
                 </form>
             </div>
             <div className="product-grid">

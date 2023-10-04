@@ -13,7 +13,7 @@ const UseAuthHook = () => {
             .then(resp => {
                 console.log(resp);
                 loginData(resp)
-                localStorage.setItem('token', resp.data.token);
+                localStorage.setItem('token', resp.data.token, resp.data);
             })
             .catch(err => { console.log(err) })
 
